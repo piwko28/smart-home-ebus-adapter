@@ -1,0 +1,34 @@
+﻿Label,Quantity,Part name,Package
+4N25,2,4N25,DIP-6_W7.62mm
+"C4,C2",2,100nF,C_1206_3216Metric
+"R21,R20",2,4.7k,R_1206_3216Metric
+R18,1,10k,R_1206_3216Metric
+AMS1117,1,AMS1117-3.3,SOT-223-3_TabPin2
+ESP-12F,1,ESP-12F,ESP-12E
+L7805,1,L7805,TO-220-3_Horizontal_TabDown
+LM393P,1,LM393,DIP-8_W7.62mm
+"R19,R17,R14,R11,R2",5,10k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+"R16,R1",2,220,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R15,1,1k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+"R13,R6",2,470,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R12,1,4.7k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+"R10,R9",2,220k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+"R8,R4",2,20k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R7,1,5.1k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R5,1,2k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R3,1,100k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+BC337,1,BC337,TO-92_Inline
+Prog,1,PROG,PinHeader_1x04_P2.54mm_Vertical
+Service,1,SERVICE,PinHeader_1x02_P2.54mm_Vertical
+PWR,1,PWR,PinHeader_1x02_P2.54mm_Vertical
+micro USB,1,USB_B_Micro,USB_Micro-B_Wuerth_629105150521
+UART,1,UART,PinHeader_1x04_P2.54mm_Vertical
+J1,1,EBUS,TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal
+D6,1,ESP blue,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
+D5,1,EBUS yellow,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
+D4,1,RX green,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
+DF10M,1,DF10M,Diode_Bridge_DIP-4_W7.62mm_P5.08mm
+D2,1,TX red,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
+D1,1,1N4737A 7.5V,D_DO-41_SOD81_P10.16mm_Horizontal
+"C5,C3",2,100uF,CP_Elec_5x5.7
+C1,1,100nF,C_Disc_D5.0mm_W2.5mm_P2.50mm
