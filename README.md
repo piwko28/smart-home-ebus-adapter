@@ -9,3 +9,9 @@ eBUS adapter PCB for use with [ebusd-esp] (https://github.com/john30/ebusd-esp) 
 ## PCB design
 
 ![PCB design](./pcb.png)
+
+## Box design
+
+The box design is for 3d printing.
+
+![PCB design](./box.png)
