@@ -6,14 +6,14 @@ Schematic inspired by [ebus adapter 2](https://github.com/eBUS/adapter), so it i
 
 ## Schematic
 
-![Schematic](./schematic.png)
+![Schematic](./img/schematic.png)
 
 ## PCB design
 
-![PCB design](./pcb.png)
+![PCB design](./img/pcb.png)
 
 ## Box design
 
 The box design is for 3d printing.
 
-![PCB design](./box.png)
+![PCB design](./img/box.png)
