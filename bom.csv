@@ -7,7 +7,8 @@ AMS1117,1,AMS1117-3.3,SOT-223-3_TabPin2
 ESP-12F,1,ESP-12F,ESP-12E
 L7805,1,L7805,TO-220-3_Horizontal_TabDown
 LM393P,1,LM393,DIP-8_W7.62mm
-"R19,R17,R14,R11,R2",5,10k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+R14,1,2.2k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+"R19,R17,R11,R2",4,10k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
 "R16,R1",2,220,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
 R15,1,1k,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
 "R13,R6",2,470,R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
