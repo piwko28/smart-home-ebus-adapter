@@ -25,6 +25,7 @@ PWR,1,PWR,PinHeader_1x02_P2.54mm_Vertical
 micro USB,1,USB_B_Micro,USB_Micro-B_Wuerth_629105150521
 UART,1,UART,PinHeader_1x04_P2.54mm_Vertical
 J1,1,EBUS,TerminalBlock_4Ucon_1x02_P3.50mm_Horizontal
+D7,1,1N914,DO35
 D6,1,ESP blue,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
 D5,1,EBUS yellow,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
 D4,1,RX green,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
@@ -32,4 +33,5 @@ DF10M,1,DF10M,Diode_Bridge_DIP-4_W7.62mm_P5.08mm
 D2,1,TX red,LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
 D1,1,1N4737A 7.5V,D_DO-41_SOD81_P10.16mm_Horizontal
 "C5,C3",2,100uF,CP_Elec_5x5.7
-C1,1,100nF,C_Disc_D5.0mm_W2.5mm_P2.50mm
+C1,1,330nF,C_Disc_D5.0mm_W2.5mm_P2.50mm
+C6,1,100nF,C_Disc_D5.0mm_W2.5mm_P2.50mm
