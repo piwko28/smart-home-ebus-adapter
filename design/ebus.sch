@@ -94,11 +94,11 @@ $EndComp
 Wire Wire Line
 	1000 2150 1150 2150
 $Comp
-L Transistor_BJT:BC337 Q1
+L Transistor_BJT:BC817 Q1
 U 1 1 6010FA98
 P 1800 2250
 F 0 "Q1" V 2128 2250 50  0000 C CNN
-F 1 "BC337" V 2037 2250 50  0000 C CNN
+F 1 "BC817" V 2037 2250 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 2000 2175 50  0001 L CIN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf" H 1800 2250 50  0001 L CNN
 	1    1800 2250
