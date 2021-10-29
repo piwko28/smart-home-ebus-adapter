@@ -1,0 +1,296 @@
+- id: '1234'
+  alias: Convert HVAC Mode
+  trigger:
+  - platform: mqtt
+    topic: convert/modeset
+  action:
+  - data_template:
+      payload: '{% set mode_name = trigger.payload %} {% set modes = { ''off'':''summer'',
+        ''heat'':''on'', ''cool'':''night'', ''auto'':''auto'' } %} {{ modes[mode_name]
+        if mode_name in modes.keys() else ''auto'' }}'
+      topic: ebusd/470/Hc1OPMode/set
+    service: mqtt.publish
+- alias: ebusd_time_update
+  initial_state: on
+  trigger:
+    - platform: time
+      at: "00:00:00"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Date/set"
+        payload_template: "{{ now().strftime('%d.%m.%Y') }}"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Time/set"
+        payload_template: "{{ now().strftime('%H:%M:%S') }}"
+- alias: Set Central Heating Heat Curve
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_heat_curve
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/470/Hc1HeatCurve/set"
+      payload: "{{ states.input_number.central_heating_heat_curve.state | float }}"
+- alias: Get Central Heating Heat Curve
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/470/Hc1HeatCurve"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_heat_curve
+      value: "{{ trigger.payload | float }}"
+- alias: Set Central Heating Set Day Temperature
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_set_day_temp
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/470/Hc1DayTemp/set"
+      payload: "{{ states.input_number.central_heating_set_day_temp.state | int }}"
+
+- alias: Get Central Heating Set Day Temperature
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/470/Hc1DayTemp"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_set_day_temp
+      value: "{{ trigger.payload | int }}"
+
+- alias: Set Central Heating Actual Room Temp Desired
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_actual_room_temp_desired
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/470/ActualRoomTempDesiredHc1/set"
+      payload: "{{ states.input_number.central_heating_actual_room_temp_desired | int }}"
+
+- alias: Get Central Heating Actual Room Temp Desired
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/470/ActualRoomTempDesiredHc1"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_actual_room_temp_desired
+      value: "{{ trigger.payload | int }}"
+
+- alias: Set Central Heating Set Night Temperature
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_set_night_temp
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/470/Hc1NightTemp/set"
+      payload: "{{ states.input_number.central_heating_set_night_temp.state | int }}"
+
+- alias: Get Central Heating Set Night Temperature
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/470/Hc1NightTemp"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_set_night_temp
+      value: "{{ trigger.payload | int }}"
+
+- alias: Set Hot Water Temperature Desired
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.hot_water_temp_desired
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/470/HwcTempDesired/set"
+      payload: "{{ states.input_number.hot_water_temp_desired.state | int }}"
+
+- alias: Get Hot Water Temperature Desired
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/470/HwcTempDesired"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.hot_water_temp_desired
+      value: "{{ trigger.payload | int }}"
+
+- alias: ebusd_mqtt_update
+  initial_state: on
+  trigger:
+    - platform: time_pattern
+      minutes: "/2"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/ReturnTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/ReturnTempExternal/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/WaterPressure/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/FlowTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/FlowTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HwcTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HwcTempMax/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HwcWaterflowMax/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/HwcTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/HwcActualTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/HwcOPMode/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/StorageTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/PositionValveSet/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/PartloadHcKW/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/ModulationTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/PumpPower/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/PrEnergyCountHc1/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/PrEnergyCountHwc1/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/averageIgnitionTime/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/FanSpeed/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/TargetFanSpeed/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/TargetFanSpeedOutput/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/currenterror/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HeatingSwitch/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/Flame/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/Ignitor/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/WP/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HwcSwitch/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HwcDemand/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/HeatingSwitch/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1PreCutOffActive/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1OPMode/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1SFMode/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1DayTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1NightTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1HeatCurve/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1ActualFlowTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/ActualRoomTempDesiredHc1/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/470/Hc1PreOrContinuosHeatingActive/get"
+        payload: "1"
