@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name 10118194-0001LF)(type Legacy)(uri ${KIPRJMOD}/usb/10118194-0001LF.lib)(options "")(descr ""))
+  (lib (name Diode)(type Legacy)(uri ${KIPRJMOD}/Diode.lib)(options "")(descr ""))
+)
