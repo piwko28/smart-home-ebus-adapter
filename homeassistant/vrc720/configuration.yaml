@@ -1,0 +1,8 @@
+homeassistant:
+  packages:
+    ebus:
+      climate: !include ebus/thermostat.yaml
+      automation: !include ebus/automations.yaml
+      sensor: !include ebus/sensors.yaml
+      binary_sensor: !include ebus/binary-sensors.yaml
+      input_number: !include ebus/input-numbers.yaml
