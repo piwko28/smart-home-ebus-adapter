@@ -1,0 +1,98 @@
+title: Przegląd
+views:
+  - title: Ogrzewanie
+    path: ogrzewanie
+    badges: []
+    cards:
+      - type: thermostat
+        entity: climate.ogrzewanie
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.gas_usage
+        line_color: blue
+        hour24: true
+        line_width: 2
+        show:
+          fill: fade
+      - type: entities
+        entities:
+          - entity: binary_sensor.ciepla_woda
+            name: Płomień
+            secondary_info: last-changed
+          - entity: sensor.ciepla_woda_aktualnie
+            name: Temperatura wody
+          - entity: sensor.ciepla_woda_docelowo
+            name: Maksymalna temperatura
+          - entity: sensor.dlugosc_kapieli
+            name: Ostatnia kąpiel
+            secondary_info: last-changed
+        title: Ciepła woda
+        state_color: false
+      - type: entities
+        entities:
+          - entity: binary_sensor.ogrzewanie_plomien
+            name: Płomień
+            secondary_info: last-changed
+          - entity: binary_sensor.ogrzewanie_pompa_wody
+            name: Pompa wody
+            secondary_info: last-changed
+          - entity: input_number.central_heating_heat_curve
+            name: Krzywa grzewcza
+          - entity: sensor.ogrzewanie_aktualna_temperatura
+            name: Aktualna temperatura wewnętrzna
+          - entity: sensor.ogrzewanie_temperatura_zewnetrzna
+            name: Temperatura zewnętrzna
+        title: Ogrzewanie
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            name: Ciepła woda - dzienne zużycie gazu
+            hours_to_show: 720
+            entities:
+              - sensor.ciepla_woda_zuzycie_gazu
+            group_by: date
+            aggregate_func: delta
+            show:
+              graph: bar
+          - type: custom:mini-graph-card
+            name: Ogrzewanie - dzienne zużycie gazu
+            hours_to_show: 720
+            entities:
+              - sensor.ogrzewanie_zuzycie_gazu
+            group_by: date
+            aggregate_func: delta
+            hour24: true
+            show:
+              graph: bar
+      - type: custom:mini-graph-card
+        name: Temperatura podłogówki
+        entities:
+          - entity: sensor.ogrzewanie_temperatura_zasilania
+            color: '#e74c3c'
+            name: Temperatura zasilania
+          - entity: sensor.ogrzewanie_docelowa_temperatura_zasilania
+            color: green
+            name: Docelowa temperatura
+          - entity: sensor.ogrzewanie_temperatura_powrotu
+            color: '#3498db'
+            name: Temperatura powrotu
+        hour24: true
+        line_width: 2
+        show:
+          fill: false
+      - type: gauge
+        entity: sensor.ogrzewanie_cisnienie
+        min: 0
+        max: 3
+        severity:
+          green: 1.2
+          yellow: 0.8
+          red: 0
+        name: Ciśnienie
+      - type: history-graph
+        entities:
+          - entity: sensor.ogrzewanie_temperatura_zasilania
+          - entity: sensor.ogrzewanie_temperatura_zewnetrzna
+        hours_to_show: 24
+        refresh_interval: 0
+        title: Regulacja centralnego ogrzewania
