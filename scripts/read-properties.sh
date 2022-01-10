@@ -1,6 +1,6 @@
 #!/bin/sh
 i=0
-stdbuf -oL ebusctl find -c $1 | awk '{print $2}' > output.txt
+ebusctl find -c $1 | awk '{print $2}' > output.txt
 awk 'NF' output.txt > o.txt
 file='o.txt'
 
