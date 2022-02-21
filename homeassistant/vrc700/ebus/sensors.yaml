@@ -1,0 +1,240 @@
+ - platform: mqtt
+   name: Ogrzewanie ciśnienie
+   unique_id: ebusd_central_heating_pressure
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/WaterPressure"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: Bar
+ - platform: mqtt
+   name: Ogrzewanie Temperatura zasilania
+   state_topic: "ebusd/bai/FlowTemp"
+   unique_id: ebusd_central_heating_flow_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ogrzewanie Docelowa temperatura zasilania
+   unique_id: ebusd_central_heating_desired_flow_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/FlowTempDesired"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ogrzewanie Temperatura powrotu
+   unique_id: ebusd_central_return_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/ReturnTemp"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ogrzewanie Różnica zasilanie-powrót
+   unique_id: ebusd_central_heating_return_temperature_difference
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/ReturnTempExternal"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ogrzewanie Odcięcie powrotu
+   unique_id: ebusd_central_heating_return_cutoff
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/ReturnTempExternal"
+   value_template: "{{ value.split(';')[1] }}"
+ - platform: mqtt
+   name: Ciepła woda Aktualnie
+   unique_id: ebusd_hot_water_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/HwcTemp"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Zasobnik Aktualnie
+   unique_id: ebusd_storage_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/StorageTemp"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"   
+ - platform: mqtt
+   name: Ciepła woda Maksymalnie
+   unique_id: ebusd_hot_water_max_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/HwcTempMax"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ciepła woda Docelowo
+   unique_id: ebusd_hot_water_actual_temp_desired
+   device:
+     identifiers: "ebusd_700"
+     via_device: "ebusd"
+   state_topic: "ebusd/700/HwcTempDesired"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ciepła woda Maksymalny przepływ
+   unique_id: ebusd_hot_water_maximum_flow
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/HwcWaterflowMax"
+   value_template: "{{ value.split(';')[0] }}"
+ - platform: mqtt
+   name: Ogrzewanie Pozycja zaworu
+   unique_id: ebusd_central_heating_3_way_valve_position
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PositionValveSet"
+   value_template: "{{ value.split(';')[0] }}"
+ - platform: mqtt
+   name: Ogrzewanie Częściowe obciążenie
+   unique_id: ebusd_central_heating_partial_load
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PartloadHcKW"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "kW"
+ - platform: mqtt
+   name: Ogrzewanie Aktualna moc
+   unique_id: ebusd_central_current_power
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/ModulationTempDesired"
+   unit_of_measurement: "%"
+ - platform: mqtt
+   name: Ogrzewanie Moc pompy
+   unique_id: ebusd_central_heating_pump_power
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PumpPower"
+   unit_of_measurement: "W"
+ - platform: mqtt
+   name: Ogrzewanie Zużycie energii
+   unique_id: ebusd_central_heating_energy_usage
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PrEnergyCountHc1"
+  
+ - platform: mqtt
+   name: Ciepła woda Zużycie energii
+   unique_id: ebusd_hot_water_energy_usage
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PrEnergyCountHwc1"
+  
+ - platform: mqtt
+   name: Ogrzewanie Zużycie gazu
+   unique_id: gas_usage_central_heating
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PrEnergyCountHc1"
+   value_template: "{{ (value | int / 4728) | round(1) }}"
+   unit_of_measurement: m³
+ - platform: mqtt
+   name: Ciepła woda Zużycie gazu
+   unique_id: gas_usage_hot_water
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/PrEnergyCountHwc1"
+   value_template: "{{ (value | int / 4728) | round(1) }}"
+   unit_of_measurement: m³
+ - platform: template
+   sensors:
+     gas_usage:
+      friendly_name: Zużycie gazu
+      value_template: "{{ states('sensor.ciepla_woda_zuzycie_gazu') | float + states('sensor.ogrzewanie_zuzycie_gazu') | float }}"
+      unit_of_measurement: m³
+      device_class: energy
+  
+ - platform: mqtt
+   name: Ogrzewanie Średni czas zapłonu
+   unique_id: ebusd_central_heating_average_ignition_time
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/averageIgnitiontime"
+   unit_of_measurement: "s"
+ - platform: mqtt
+   name: Ogrzewanie Prędkość wentylatora
+   unique_id: ebusd_central_heating_fan_speed
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/FanSpeed"
+   unit_of_measurement: RPM
+ - platform: mqtt
+   name: Ogrzewanie Docelowa prędkość wentylatora
+   unique_id: ebusd_central_heating_target_fan_speed
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/TargetFanSpeed"
+   unit_of_measurement: RPM
+ - platform: mqtt
+   name: Ogrzewanie Błąd
+   unique_id: ebusd_central_heating_current_error
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/currenterror"
+  
+  
+ - platform: mqtt
+   name: Ogrzewanie Aktualna temperatura
+   unique_id: ebusd_central_heating_current_room_temperature
+   device:
+     identifiers: "ebusd_700"
+     via_device: "ebusd"
+   state_topic: "ebusd/700/z1RoomTemp"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+  
+  
+ - platform: mqtt
+   name: Ogrzewanie Temperatura zewnętrzna
+   unique_id: ebusd_central_heating_outside_temperature
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/OutdoorstempSensor"
+   value_template: "{{ value.split(';')[0] }}"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ogrzewanie Aktualna temperatura przepływu
+   unique_id: ebusd_central_heating_actual_flow_temperature_desired
+   device:
+     identifiers: "ebusd_700"
+     via_device: "ebusd"
+   state_topic: "ebusd/700/Hc1ActualFlowTempDesired"
+   unit_of_measurement: "°C"
+ - platform: mqtt
+   name: Ogrzewanie Temperatura docelowa
+   unique_id: ebusd_central_heating_actual_room_temperature_desired
+   device:
+     identifiers: "ebusd_700"
+     via_device: "ebusd"
+   state_topic: "ebusd/700/ActualRoomTempDesiredHc1"
+   unit_of_measurement: "°C"

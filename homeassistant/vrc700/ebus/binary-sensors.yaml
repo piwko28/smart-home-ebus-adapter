@@ -1,0 +1,37 @@
+
+ - platform: mqtt
+   name: "Ogrzewanie Płomień"
+   unique_id: ebusd_central_heating_flame
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/Flame"
+   payload_on: "on"
+   payload_off: "off"
+ - platform: mqtt
+   name: "Ogrzewanie Zapłon"
+   unique_id: ebusd_central_heating_ignitor
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/Ignitor"
+   payload_on: "on"
+   payload_off: "off"
+ - platform: mqtt
+   name: "Ogrzewanie Pompa wody"
+   unique_id: ebusd_central_heating_water_pump_state
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/WP"
+   payload_on: "on"
+   payload_off: "off"
+ - platform: mqtt
+   name: "Ciepła woda"
+   unique_id: ebusd_central_heating_hot_water_demand
+   device:
+     identifiers: "ebusd_bai"
+     via_device: "ebusd"
+   state_topic: "ebusd/bai/HwcDemand"
+   payload_on: "yes"
+   payload_off: "no"
