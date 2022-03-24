@@ -552,9 +552,9 @@ Wire Wire Line
 Connection ~ 4650 4700
 Wire Wire Line
 	4650 4700 5000 4700
-Text GLabel 4025 3500 2    50   Input ~ 0
-RX
 Text GLabel 4025 3600 2    50   Input ~ 0
+RX
+Text GLabel 4025 3500 2    50   Input ~ 0
 TX
 $Comp
 L power:GNDREF #PWR017
@@ -1123,65 +1123,55 @@ Connection ~ 8675 850
 $Comp
 L Connector:USB_B_Micro J2
 U 1 1 605F8854
-P 7850 1050
-F 0 "J2" H 7907 1517 50  0000 C CNN
-F 1 "USB_B_Micro" H 7907 1426 50  0000 C CNN
-F 2 "usb:AMPHENOL_10118194-0001LF" H 8000 1000 50  0001 C CNN
-F 3 "~" H 8000 1000 50  0001 C CNN
-	1    7850 1050
+P 8075 4400
+F 0 "J2" H 8132 4867 50  0000 C CNN
+F 1 "USB_B_Micro" H 8132 4776 50  0000 C CNN
+F 2 "usb:AMPHENOL_10118194-0001LF" H 8225 4350 50  0001 C CNN
+F 3 "~" H 8225 4350 50  0001 C CNN
+	1    8075 4400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7750 1450 7800 1450
+	7975 4800 8025 4800
 $Comp
 L power:GNDREF #PWR0113
 U 1 1 605FFA4B
-P 7800 1450
-F 0 "#PWR0113" H 7800 1200 50  0001 C CNN
-F 1 "GNDREF" H 7805 1277 50  0001 C CNN
-F 2 "" H 7800 1450 50  0001 C CNN
-F 3 "" H 7800 1450 50  0001 C CNN
-	1    7800 1450
+P 8025 4800
+F 0 "#PWR0113" H 8025 4550 50  0001 C CNN
+F 1 "GNDREF" H 8030 4627 50  0001 C CNN
+F 2 "" H 8025 4800 50  0001 C CNN
+F 3 "" H 8025 4800 50  0001 C CNN
+	1    8025 4800
 	1    0    0    -1  
 $EndComp
-Connection ~ 7800 1450
+Connection ~ 8025 4800
 Wire Wire Line
-	7800 1450 7850 1450
+	8025 4800 8075 4800
 $Comp
 L Connector:Conn_01x02_Male J6
 U 1 1 60601602
-P 8225 1725
-F 0 "J6" V 8379 1537 50  0000 R CNN
-F 1 "PWR" V 8288 1537 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8225 1725 50  0001 C CNN
-F 3 "~" H 8225 1725 50  0001 C CNN
-	1    8225 1725
+P 7950 5500
+F 0 "J6" V 8104 5312 50  0000 R CNN
+F 1 "PWR" V 8013 5312 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7950 5500 50  0001 C CNN
+F 3 "~" H 7950 5500 50  0001 C CNN
+	1    7950 5500
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7850 1450 8225 1450
-Wire Wire Line
-	8225 1450 8225 1525
-Connection ~ 7850 1450
-Wire Wire Line
-	8325 1525 8325 850 
-Wire Wire Line
-	8325 850  8150 850 
-NoConn ~ 8150 1050
-NoConn ~ 8150 1150
-NoConn ~ 8150 1250
+	8550 4200 8375 4200
+NoConn ~ 8375 4600
 $Comp
 L power:+5VP #PWR0114
 U 1 1 60612368
-P 8325 850
-F 0 "#PWR0114" H 8325 700 50  0001 C CNN
-F 1 "+5VP" H 8340 1023 50  0000 C CNN
-F 2 "" H 8325 850 50  0001 C CNN
-F 3 "" H 8325 850 50  0001 C CNN
-	1    8325 850 
+P 8550 4200
+F 0 "#PWR0114" H 8550 4050 50  0001 C CNN
+F 1 "+5VP" H 8565 4373 50  0000 C CNN
+F 2 "" H 8550 4200 50  0001 C CNN
+F 3 "" H 8550 4200 50  0001 C CNN
+	1    8550 4200
 	1    0    0    -1  
 $EndComp
-Connection ~ 8325 850 
 $Comp
 L Connector:Conn_01x06_Female J4
 U 1 1 6062E931
@@ -1266,7 +1256,7 @@ F 3 "" H 8575 2600 50  0001 C CNN
 	1    8575 2600
 	0    -1   -1   0   
 $EndComp
-Text GLabel 9075 3000 2    50   Input ~ 0
+Text GLabel 9075 2900 2    50   Input ~ 0
 TX
 $Comp
 L power:GNDREF #PWR0118
@@ -1302,7 +1292,7 @@ Wire Wire Line
 Connection ~ 1550 850 
 Wire Wire Line
 	1550 850  1650 850 
-Text GLabel 9075 2900 2    50   Input ~ 0
+Text GLabel 9075 3000 2    50   Input ~ 0
 RX
 Wire Wire Line
 	1150 4200 1250 4200
@@ -1348,45 +1338,45 @@ $EndComp
 $Comp
 L Mechanical:MountingHole H5
 U 1 1 61A88FA3
-P 9900 3900
-F 0 "H5" H 10000 3946 50  0000 L CNN
-F 1 "MountingHole" H 10000 3855 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 9900 3900 50  0001 C CNN
-F 3 "~" H 9900 3900 50  0001 C CNN
-	1    9900 3900
+P 7650 900
+F 0 "H5" H 7750 946 50  0000 L CNN
+F 1 "MountingHole" H 7750 855 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 7650 900 50  0001 C CNN
+F 3 "~" H 7650 900 50  0001 C CNN
+	1    7650 900 
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H6
 U 1 1 61A88FAD
-P 9900 4075
-F 0 "H6" H 10000 4121 50  0000 L CNN
-F 1 "MountingHole" H 10000 4030 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 9900 4075 50  0001 C CNN
-F 3 "~" H 9900 4075 50  0001 C CNN
-	1    9900 4075
+P 7650 1075
+F 0 "H6" H 7750 1121 50  0000 L CNN
+F 1 "MountingHole" H 7750 1030 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 7650 1075 50  0001 C CNN
+F 3 "~" H 7650 1075 50  0001 C CNN
+	1    7650 1075
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H7
 U 1 1 61A88FB7
-P 9900 4250
-F 0 "H7" H 10000 4296 50  0000 L CNN
-F 1 "MountingHole" H 10000 4205 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 9900 4250 50  0001 C CNN
-F 3 "~" H 9900 4250 50  0001 C CNN
-	1    9900 4250
+P 7650 1250
+F 0 "H7" H 7750 1296 50  0000 L CNN
+F 1 "MountingHole" H 7750 1205 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 7650 1250 50  0001 C CNN
+F 3 "~" H 7650 1250 50  0001 C CNN
+	1    7650 1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H8
 U 1 1 61A88FC1
-P 9900 4425
-F 0 "H8" H 10000 4471 50  0000 L CNN
-F 1 "MountingHole" H 10000 4380 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3" H 9900 4425 50  0001 C CNN
-F 3 "~" H 9900 4425 50  0001 C CNN
-	1    9900 4425
+P 7650 1425
+F 0 "H8" H 7750 1471 50  0000 L CNN
+F 1 "MountingHole" H 7750 1380 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 7650 1425 50  0001 C CNN
+F 3 "~" H 7650 1425 50  0001 C CNN
+	1    7650 1425
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1505,4 +1495,179 @@ Text GLabel 1875 2900 3    50   Input ~ 0
 MP12
 Text GLabel 1800 2450 2    50   Input ~ 0
 MP13
+$Comp
+L power:GNDREF #PWR011
+U 1 1 625D53D7
+P 7950 5300
+F 0 "#PWR011" H 7950 5050 50  0001 C CNN
+F 1 "GNDREF" H 7955 5127 50  0001 C CNN
+F 2 "" H 7950 5300 50  0001 C CNN
+F 3 "" H 7950 5300 50  0001 C CNN
+	1    7950 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5VP #PWR021
+U 1 1 625D637A
+P 8050 5300
+F 0 "#PWR021" H 8050 5150 50  0001 C CNN
+F 1 "+5VP" H 8065 5473 50  0000 C CNN
+F 2 "" H 8050 5300 50  0001 C CNN
+F 3 "" H 8050 5300 50  0001 C CNN
+	1    8050 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Interface_USB:CH340G U7
+U 1 1 625EA30F
+P 9200 4500
+F 0 "U7" H 9200 3811 50  0000 C CNN
+F 1 "CH340G" H 9200 3720 50  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 9250 3950 50  0001 L CNN
+F 3 "http://www.datasheet5.com/pdf-local-2195953" H 8850 5300 50  0001 C CNN
+	1    9200 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR026
+U 1 1 625EEA88
+P 9150 3900
+F 0 "#PWR026" H 9150 3750 50  0001 C CNN
+F 1 "+3.3V" H 9165 4073 50  0000 C CNN
+F 2 "" H 9150 3900 50  0001 C CNN
+F 3 "" H 9150 3900 50  0001 C CNN
+	1    9150 3900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 9600 4400
+NoConn ~ 9600 4500
+NoConn ~ 9600 4600
+NoConn ~ 9600 4700
+NoConn ~ 8800 4200
+Text GLabel 9600 4200 2    50   Output ~ 0
+P_TX
+Text GLabel 9600 4100 2    50   Output ~ 0
+P_RX
+Wire Wire Line
+	8375 4400 8800 4400
+Wire Wire Line
+	8375 4500 8800 4500
+$Comp
+L power:GNDREF #PWR027
+U 1 1 6263DC77
+P 9200 5100
+F 0 "#PWR027" H 9200 4850 50  0001 C CNN
+F 1 "GNDREF" H 9205 4927 50  0001 C CNN
+F 2 "" H 9200 5100 50  0001 C CNN
+F 3 "" H 9200 5100 50  0001 C CNN
+	1    9200 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:BC817 Q2
+U 1 1 6264A745
+P 10525 4375
+F 0 "Q2" V 10853 4375 50  0000 C CNN
+F 1 "BC817" V 10762 4375 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10725 4300 50  0001 L CIN
+F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf" H 10525 4375 50  0001 L CNN
+	1    10525 4375
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R2
+U 1 1 626570FF
+P 10225 4375
+F 0 "R2" V 10029 4375 50  0000 C CNN
+F 1 "10k" V 10120 4375 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" H 10225 4375 50  0001 C CNN
+F 3 "~" H 10225 4375 50  0001 C CNN
+	1    10225 4375
+	0    1    1    0   
+$EndComp
+$Comp
+L Transistor_BJT:BC817 Q3
+U 1 1 6266D9DC
+P 10525 5025
+F 0 "Q3" V 10853 5025 50  0000 C CNN
+F 1 "BC817" V 10762 5025 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 10725 4950 50  0001 L CIN
+F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/bc337.pdf" H 10525 5025 50  0001 L CNN
+	1    10525 5025
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R5
+U 1 1 6269786A
+P 10225 5025
+F 0 "R5" V 10029 5025 50  0000 C CNN
+F 1 "10k" V 10120 5025 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" H 10225 5025 50  0001 C CNN
+F 3 "~" H 10225 5025 50  0001 C CNN
+	1    10225 5025
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9600 4900 9775 4900
+Wire Wire Line
+	10000 4900 10000 5025
+Wire Wire Line
+	9600 4800 9875 4800
+Wire Wire Line
+	10000 4800 10000 4375
+Text GLabel 9250 2200 3    50   Input ~ 0
+EN
+Text GLabel 10750 4175 2    50   Input ~ 0
+EN
+Wire Wire Line
+	10750 4175 10625 4175
+Text GLabel 10750 4825 2    50   Input ~ 0
+GPIO0
+Wire Wire Line
+	10625 4825 10750 4825
+Wire Wire Line
+	9875 4800 9875 5225
+Connection ~ 9875 4800
+Wire Wire Line
+	9875 4800 10000 4800
+Wire Wire Line
+	9775 4900 9775 4575
+Connection ~ 9775 4900
+Wire Wire Line
+	9775 4900 10000 4900
+Wire Wire Line
+	10000 4375 10125 4375
+Wire Wire Line
+	9775 4575 10625 4575
+Wire Wire Line
+	10000 5025 10125 5025
+Wire Wire Line
+	9875 5225 10625 5225
+$Comp
+L Device:Resonator_Small Y1
+U 1 1 6277448B
+P 8700 4800
+F 0 "Y1" H 8888 4796 50  0000 L CNN
+F 1 "12MHz 22pF" H 8888 4705 50  0000 L CNN
+F 2 "Crystal:Resonator_SMD_muRata_CSTxExxV-3Pin_3.0x1.1mm" H 8675 4800 50  0001 C CNN
+F 3 "~" H 8675 4800 50  0001 C CNN
+	1    8700 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GNDREF #PWR023
+U 1 1 6277A3B7
+P 8500 4800
+F 0 "#PWR023" H 8500 4550 50  0001 C CNN
+F 1 "GNDREF" H 8505 4627 50  0001 C CNN
+F 2 "" H 8500 4800 50  0001 C CNN
+F 3 "" H 8500 4800 50  0001 C CNN
+	1    8500 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9100 3900 9150 3900
+Wire Wire Line
+	9150 3900 9200 3900
+Connection ~ 9150 3900
 $EndSCHEMATC
