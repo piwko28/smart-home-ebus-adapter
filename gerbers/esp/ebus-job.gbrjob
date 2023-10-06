@@ -7,14 +7,14 @@
       "Application": "Pcbnew",
       "Version":     "5.1.5+dfsg1-2build2"
     },
-    "CreationDate":  "2021-11-04T20:27:46+01:00"
+    "CreationDate":  "2022-11-14T11:38:59+01:00"
   },
   "GeneralSpecs":
   {
     "ProjectId":
     {
-      "Name": "ebus-esp",
-      "GUID": "65627573-2d65-4737-902e-6b696361645f",
+      "Name": "ebus",
+      "GUID": "65627573-2e6b-4696-9361-645f70636258",
       "Revision": "rev?"
     },
     "Size":
@@ -40,37 +40,37 @@
   "FilesAttributes":
   [
     {
-      "Path":  "ebus-esp-F_Cu.gbr",
+      "Path":  "ebus-F_Cu.gbr",
       "FileFunction":  "Copper,L1,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "ebus-esp-B_Cu.gbr",
+      "Path":  "ebus-B_Cu.gbr",
       "FileFunction":  "Copper,L2,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "ebus-esp-F_SilkS.gbr",
+      "Path":  "ebus-F_SilkS.gbr",
       "FileFunction":  "Legend,Top",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "ebus-esp-B_SilkS.gbr",
+      "Path":  "ebus-B_SilkS.gbr",
       "FileFunction":  "Legend,Bot",
       "FilePolarity":  "Positive"
     },
     {
-      "Path":  "ebus-esp-F_Mask.gbr",
+      "Path":  "ebus-F_Mask.gbr",
       "FileFunction":  "SolderMask,Top",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "ebus-esp-B_Mask.gbr",
+      "Path":  "ebus-B_Mask.gbr",
       "FileFunction":  "SolderMask,Bot",
       "FilePolarity":  "Negative"
     },
     {
-      "Path":  "ebus-esp-Edge_Cuts.gbr",
+      "Path":  "ebus-Edge_Cuts.gbr",
       "FileFunction":  "Profile",
       "FilePolarity":  "Positive"
     }
