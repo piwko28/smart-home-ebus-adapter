@@ -1,0 +1,19 @@
+- name: Ogrzewanie Aktualna temperatura przepływu
+  unique_id: ebusd_central_heating_actual_flow_temperature_desired
+  state_topic: "ebusd/720/Hc1ActualFlowTempDesired"
+  unit_of_measurement: "°C"
+
+- name: Pompa ciepła Temperatura zasilania
+  state_topic: "ebusd/hmu/Status01"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Pompa ciepła Temperatura powrotu
+  state_topic: "ebusd/hmu/Status01"
+  value_template: "{{ value.split(';')[1] }}"
+  unit_of_measurement: "°C"
+
+- name: Pompa ciepła Temperatura zasilania docelowa
+  state_topic: "ebusd/hmu/SetMode"
+  value_template: "{{ value.split(';')[1] }}"
+  unit_of_measurement: "°C"

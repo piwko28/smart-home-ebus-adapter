@@ -1,0 +1,35 @@
+- name: Ogrzewanie Pozycja zaworu
+  unique_id: ebusd_central_heating_3_way_valve_position
+  state_topic: "ebusd/bai/PositionValveSet"
+  value_template: "{{ value.split(';')[0] }}"
+
+- name: Ogrzewanie Częściowe obciążenie
+  unique_id: ebusd_central_heating_partial_load
+  state_topic: "ebusd/bai/PartloadHcKW"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "kW"
+
+- name: Ogrzewanie Aktualna moc
+  unique_id: ebusd_central_current_power
+  state_topic: "ebusd/bai/ModulationTempDesired"
+  unit_of_measurement: "%"
+
+- name: Ogrzewanie Moc pompy
+  unique_id: ebusd_central_heating_pump_power
+  state_topic: "ebusd/bai/PumpPower"
+  unit_of_measurement: "W"
+
+- name: Ogrzewanie Średni czas zapłonu
+  unique_id: ebusd_central_heating_average_ignition_time
+  state_topic: "ebusd/bai/averageIgnitiontime"
+  unit_of_measurement: "s"
+
+- name: Ogrzewanie Prędkość wentylatora
+  unique_id: ebusd_central_heating_fan_speed
+  state_topic: "ebusd/bai/FanSpeed"
+  unit_of_measurement: RPM
+
+- name: Ogrzewanie Docelowa prędkość wentylatora
+  unique_id: ebusd_central_heating_target_fan_speed
+  state_topic: "ebusd/bai/TargetFanSpeed"
+  unit_of_measurement: RPM

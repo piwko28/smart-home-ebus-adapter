@@ -1,0 +1,122 @@
+- alias: ebusd_mqtt_update
+  initial_state: on
+  trigger:
+    - platform: time_pattern
+      minutes: "/2"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/WaterPressure/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/EnergyCool/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/HoursCool/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/currenterror/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1RoomTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/DisplayedOutsideTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/OutsideTempAvg/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/Hc1ActualFlowTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1ActualRoomTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1CoolingTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1OpMode/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1RoomTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1NightTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1DayTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1NightTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1DayTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/z1RoomTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/HwcOpMode/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/HwcTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/HwcTempDesired/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/bai/StorageTemp/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/StatusCirPump/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/CurrentCompressorUtil/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/CurrentConsumedPower/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/CurrentYieldPower/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/HoursHC/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/Hours/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/hmu/WaterThroughput/get"
+        payload: "1"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/YieldTotal/get"
+        payload: "1"

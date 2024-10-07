@@ -1,0 +1,4 @@
+- name: Ogrzewanie Temperatura chłodzenia
+  unique_id: ebusd_central_heating_cooling_temp
+  state_topic: "ebusd/720/z1CoolingTemp"
+  unit_of_measurement: "°C"

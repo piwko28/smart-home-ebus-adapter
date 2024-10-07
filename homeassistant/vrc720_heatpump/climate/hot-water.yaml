@@ -1,0 +1,15 @@
+name: "Ciepła woda"
+min_temp: 35
+max_temp: 65
+modes:
+  - "auto"
+  - "heat"
+  - "off"
+mode_state_template: >-
+  {% set values = { 'auto':'auto', 'day':'heat', 'off':'off'} %}
+  {{ values[value] if value in values.keys() else 'off' }}
+mode_command_topic: "convert/Hwcmodeset"
+mode_state_topic: "ebusd/720/HwcOpMode"
+temperature_state_topic: "ebusd/720/HwcTempDesired"
+temperature_command_topic: "ebusd/720/HwcTempDesired/set"
+current_temperature_topic: "ebusd/bai/StorageTemp"

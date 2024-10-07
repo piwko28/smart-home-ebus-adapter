@@ -1,0 +1,10 @@
+- name: Ogrzewanie Aktualna temperatura
+  unique_id: ebusd_central_heating_current_room_temperature
+  state_topic: "ebusd/720/z1RoomTemp"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ogrzewanie Temperatura docelowa
+  unique_id: ebusd_central_heating_actual_room_temperature_desired
+  state_topic: "ebusd/720/z1ActualRoomTempDesired"
+  unit_of_measurement: "°C"

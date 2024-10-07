@@ -1,0 +1,28 @@
+- name: Ogrzewanie Temperatura zasilania
+  state_topic: "ebusd/bai/FlowTemp"
+  unique_id: ebusd_central_heating_flow_temperature
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ogrzewanie Docelowa temperatura zasilania
+  unique_id: ebusd_central_heating_desired_flow_temperature
+  state_topic: "ebusd/bai/FlowTempDesired"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ogrzewanie Temperatura powrotu
+  unique_id: ebusd_central_return_temperature
+  state_topic: "ebusd/bai/ReturnTemp"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ogrzewanie Różnica zasilanie-powrót
+  unique_id: ebusd_central_heating_return_temperature_difference
+  state_topic: "ebusd/bai/ReturnTempExternal"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ogrzewanie Odcięcie powrotu
+  unique_id: ebusd_central_heating_return_cutoff
+  state_topic: "ebusd/bai/ReturnTempExternal"
+  value_template: "{{ value.split(';')[1] }}"

@@ -1,0 +1,12 @@
+- id: '1234'
+  alias: Convert HVAC Mode
+  trigger:
+  - platform: mqtt
+    topic: convert/modeset
+  action:
+  - data_template:
+      payload: '{% set mode_name = trigger.payload %} {% set modes = { ''off'':''summer'',
+        ''heat'':''on'', ''cool'':''night'', ''auto'':''auto'' } %} {{ modes[mode_name]
+        if mode_name in modes.keys() else ''auto'' }}'
+      topic: ebusd/720/Hc1OPMode/set
+    service: mqtt.publish

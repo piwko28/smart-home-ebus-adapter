@@ -1,0 +1,21 @@
+- alias: Set Central Heating Heat Curve
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_heat_curve
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/720/Hc1HeatCurve/set"
+      payload: "{{ states.input_number.central_heating_heat_curve.state | float }}"
+
+- alias: Get Central Heating Heat Curve
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/720/Hc1HeatCurve"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_heat_curve
+      value: "{{ trigger.payload | float }}"

@@ -1,0 +1,21 @@
+- alias: Set Central Heating Actual Room Temp Desired
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_actual_room_temp_desired
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/720/ActualRoomTempDesiredHc1/set"
+      payload: "{{ states.input_number.central_heating_actual_room_temp_desired | int }}"
+
+- alias: Get Central Heating Actual Room Temp Desired
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/720/ActualRoomTempDesiredHc1"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_actual_room_temp_desired
+      value: "{{ trigger.payload | int }}"

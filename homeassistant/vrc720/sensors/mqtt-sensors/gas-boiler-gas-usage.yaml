@@ -1,0 +1,35 @@
+- name: Ogrzewanie Zużycie energii
+  unique_id: ebusd_central_heating_energy_usage
+  state_topic: "ebusd/bai/PrEnergyCountHc1"
+
+- name: Ciepła woda Zużycie energii
+  unique_id: ebusd_hot_water_energy_usage
+  state_topic: "ebusd/bai/PrEnergyCountHwc1"
+
+- name: Ogrzewanie Zużycie gazu jedn
+  unique_id: gas_usage_central_heating_2
+  state_topic: "ebusd/bai/PrEnergyCountHc1"
+  device_class: energy
+  state_class: total_increasing
+
+- name: Ogrzewanie Zużycie gazu
+  unique_id: gas_usage_central_heating
+  state_topic: "ebusd/bai/PrEnergyCountHc1"
+  value_template: "{{ (value | int / 3345.400679 + 6296.611) | round(1) }}"
+  unit_of_measurement: " m³"
+  device_class: energy
+  state_class: total_increasing
+
+- name: Ciepła woda Zużycie gazu jedn
+  unique_id: gas_usage_hot_water_2
+  state_topic: "ebusd/bai/PrEnergyCountHwc1"
+  device_class: energy
+  state_class: total_increasing
+
+- name: Ciepła woda Zużycie gazu
+  unique_id: gas_usage_hot_water
+  state_topic: "ebusd/bai/PrEnergyCountHwc1"
+  value_template: "{{ (value | int / 2262.6936876 + 37.389) | round(1) }}"
+  unit_of_measurement: " m³"
+  device_class: energy
+  state_class: total_increasing

@@ -1,0 +1,6 @@
+name: "Chłodzenie"
+min_temp: 20
+max_temp: 30
+temperature_state_topic: "ebusd/720/z1CoolingTemp"
+temperature_command_topic: "ebusd/720/z1CoolingTemp/set"
+current_temperature_topic: "ebusd/720/z1RoomTemp"

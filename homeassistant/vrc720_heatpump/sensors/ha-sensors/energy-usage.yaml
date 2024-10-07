@@ -1,0 +1,11 @@
+- platform: integration
+  source: sensor.pompa_ciepla_oddawana_energia
+  name: heatpump_yield_energy
+  #unit_prefix: k
+  round: 2
+
+- platform: integration
+  source: sensor.pompa_ciepla_pobierana_energia
+  name: heatpump_consumed_energy
+  #unit_prefix: k
+  round: 2

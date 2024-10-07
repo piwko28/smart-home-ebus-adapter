@@ -1,0 +1,21 @@
+- name: Ciepła woda Docelowo
+  unique_id: ebusd_hot_water_actual_temp_desired
+  state_topic: "ebusd/720/HwcActualTempDesired"
+  unit_of_measurement: "°C"
+
+- name: Ciepła woda Aktualnie
+  unique_id: ebusd_hot_water_temperature
+  state_topic: "gasboiler/bai/HwcTemp"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ciepła woda Maksymalnie
+  unique_id: ebusd_hot_water_max_temperature
+  state_topic: "gasboiler/bai/HwcTempMax"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Ciepła woda Maksymalny przepływ
+  unique_id: ebusd_hot_water_maximum_flow
+  state_topic: "gasboiler/bai/HwcWaterflowMax"
+  value_template: "{{ value.split(';')[0] }}"

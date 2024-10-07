@@ -1,0 +1,14 @@
+- alias: ebusd_time_update
+  initial_state: on
+  trigger:
+    - platform: time
+      at: "00:00:00"
+  action:
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/Date/set"
+        payload_template: "{{ now().strftime('%d.%m.%Y') }}"
+    - service: mqtt.publish
+      data:
+        topic: "ebusd/720/Time/set"
+        payload_template: "{{ now().strftime('%H:%M:%S') }}"

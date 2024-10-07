@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    gas_usage:
+      friendly_name: Zużycie gazu
+      value_template: "{{ states('sensor.ciepla_woda_zuzycie_gazu') | float + states('sensor.ogrzewanie_zuzycie_gazu') | float }}"
+      unit_of_measurement: " m³"

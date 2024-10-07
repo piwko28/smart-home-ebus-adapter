@@ -1,0 +1,3 @@
+- name: Ogrzewanie Błąd
+  unique_id: ebusd_central_heating_current_error
+  state_topic: "ebusd/720/currenterror"

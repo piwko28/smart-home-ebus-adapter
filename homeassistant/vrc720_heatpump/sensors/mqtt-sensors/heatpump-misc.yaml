@@ -1,0 +1,3 @@
+- name: Pompa ciepła Moc sprężarki
+  state_topic: "ebusd/hmu/CurrentCompressorUtil"
+  unit_of_measurement: "%"

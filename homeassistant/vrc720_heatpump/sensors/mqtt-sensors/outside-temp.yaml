@@ -1,0 +1,11 @@
+- name: Ogrzewanie Temperatura zewnętrzna
+  unique_id: ebusd_central_heating_outside_temperature
+  state_topic: "ebusd/720/DisplayedOutsideTemp"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"
+
+- name: Temperatura zewnętrzna średnia
+  unique_id: ebusd_central_heating_outside_avg_temperature
+  state_topic: "ebusd/720/OutsideTempAvg"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: "°C"

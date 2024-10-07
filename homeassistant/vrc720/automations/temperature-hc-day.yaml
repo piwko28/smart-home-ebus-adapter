@@ -1,0 +1,21 @@
+- alias: Set Central Heating Set Day Temperature
+  initial_state: on
+  trigger:
+    - platform: state
+      entity_id: input_number.central_heating_set_day_temp
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "ebusd/720/Hc1DayTemp/set"
+      payload: "{{ states.input_number.central_heating_set_day_temp.state | int }}"
+
+- alias: Get Central Heating Set Day Temperature
+  initial_state: on
+  trigger:
+    - platform: mqtt
+      topic: "ebusd/720/Hc1DayTemp"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.central_heating_set_day_temp
+      value: "{{ trigger.payload | int }}"

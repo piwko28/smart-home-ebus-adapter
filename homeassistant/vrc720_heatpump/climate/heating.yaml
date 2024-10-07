@@ -1,0 +1,17 @@
+name: "Ogrzewanie"
+modes:
+  - "auto"
+  - "heat"
+  - "cool"
+  - "off"
+mode_state_template: >-
+  {% set values = { 'auto':'auto', 'day':'heat', 'night':'cool', 'off':'off'} %}
+  {{ values[value] if value in values.keys() else 'off' }}
+mode_command_topic: "convert/modeset"
+mode_state_topic: "ebusd/720/z1OpMode"
+temperature_state_topic: "ebusd/720/z1RoomTemp"
+temperature_low_state_topic: "ebusd/720/z1NightTemp"
+temperature_high_state_topic: "ebusd/720/z1DayTemp"
+temperature_low_command_topic: "ebusd/720/z1NightTemp/set"
+temperature_high_command_topic: "ebusd/720/z1DayTemp/set"
+current_temperature_topic: "ebusd/720/z1RoomTemp"

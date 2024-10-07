@@ -1,0 +1,52 @@
+- name: Chłodzenie Zużycie energii
+  unique_id: cooling_energy
+  state_topic: "ebusd/hmu/EnergyCool"
+  value_template: "{{ (value | int / 8) | round(1) }}"
+  unit_of_measurement: "kWh"
+
+- name: Chłodzenie Czas pracy
+  unique_id: cooling_hours
+  state_topic: "ebusd/hmu/HoursCool"
+  value_template: "{{ (value | int) }}"
+  unit_of_measurement: "h"
+
+- name: Pompa ciepła Pobierana energia
+  state_topic: "ebusd/hmu/CurrentConsumedPower"
+  unit_of_measurement: "kW"
+  device_class: energy
+  state_class: measurement
+
+- name: Pompa ciepła Oddawana energia
+  state_topic: "ebusd/hmu/CurrentYieldPower"
+  unit_of_measurement: "kW"
+  device_class: energy
+  state_class: measurement
+
+- name: Pompa ciepła Energy HC
+  state_topic: "ebusd/hmu/HoursHC"
+
+- name: Pompa ciepła Hours
+  state_topic: "ebusd/hmu/Hours"
+
+- name: Pompa ciepła Water Throughput
+  state_topic: "ebusd/hmu/WaterThroughput"
+  unit_of_measurement: "l/h"
+
+- name: Pompa ciepła Yield Total
+  state_topic: "ebusd/720/YieldTotal"
+
+- name: Pompa ciepła State1
+  state_topic: "ebusd/hmu/State"
+  value_template: "{{ value.split(';')[0] }}"
+
+- name: Pompa ciepła State2
+  state_topic: "ebusd/hmu/State"
+  value_template: "{{ value.split(';')[1] }}"
+
+- name: Pompa ciepła State3
+  state_topic: "ebusd/hmu/State"
+  value_template: "{{ value.split(';')[2] }}"
+
+- name: Pompa ciepła State4
+  state_topic: "ebusd/hmu/State"
+  value_template: "{{ value.split(';')[3] }}"

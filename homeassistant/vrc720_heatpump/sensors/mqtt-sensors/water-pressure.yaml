@@ -1,0 +1,5 @@
+- name: Ogrzewanie ciśnienie
+  unique_id: ebusd_central_heating_pressure
+  state_topic: "ebusd/720/WaterPressure"
+  value_template: "{{ value.split(';')[0] }}"
+  unit_of_measurement: Bar

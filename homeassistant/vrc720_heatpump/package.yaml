@@ -1,0 +1,7 @@
+automation: !include_dir_merge_list automations/
+mqtt:
+  sensor: !include_dir_merge_list sensors/mqtt-sensors/
+  binary_sensor: !include_dir_merge_list sensors/mqtt-binary-sensors/
+  climate: !include_dir_list climate/
+sensor: !include_dir_merge_list sensors/ha-sensors/
+input_number: !include_dir_merge_named helpers/input-numbers/
